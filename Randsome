@@ -1,0 +1,15 @@
+from collections import Counter
+def ransom_note(magazine, ransom):
+  if len(magazine) > 0 and len(ransom) > 0:
+   mag_dict = Counter(magazine)
+   ransome_dict = Counter(ransom)
+   for key in ransome_dict.keys():
+       if ransome_dict[key] > mag_dict[key]:
+           return False
+   return True
+if __name__ == '__main__':
+
+    magazine = 'apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg'.strip().split(' ')
+    ransom = 'elo lxkvg bg mwz clm w'.strip().split(' ')
+    answer = ransom_note(magazine, ransom)
+    print(answer)
